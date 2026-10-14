@@ -1,0 +1,21 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "cn.grasswood.workbench"
+    compileSdk 37
+
+    defaultConfig {
+        applicationId "cn.grasswood.workbench"
+        minSdk 26
+        targetSdk 37
+        versionCode 4
+        versionName "1.0.3"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

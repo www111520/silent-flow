@@ -1,0 +1,30 @@
+{
+  "name": "qq-tech-info-collector",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('node:fs').cpSync('assets','dist/assets',{recursive:true})\"",
+    "start": "node --env-file=.env dist/src/main.js",
+    "dev": "node --experimental-transform-types --env-file=.env src/main.ts",
+    "startup:install": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-startup.ps1",
+    "startup:remove": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/uninstall-startup.ps1",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "ws": "^8.18.3",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.6"
+  }
+}
